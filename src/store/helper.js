@@ -1,6 +1,6 @@
 import { put } from 'redux-saga/effects';
 
-import { POST_LOGIN_FAILURE } from './auth/constant';
+import { FETCH_USER_FAILURE } from './auth/constant';
 
 export function* handleError(error, failureConstant) {
   // If response undefined, user seems offline
@@ -22,7 +22,7 @@ export function* handleError(error, failureConstant) {
       // If token invalid, force logout from the app
       if (errorData.code == 403 && errorData.message == 'Unauthorized') {
         yield put({
-          type: POST_LOGIN_FAILURE,
+          type: FETCH_USER_FAILURE,
           payload: {
             error: {
               message: 'You are logged out, please login again'

@@ -1,6 +1,5 @@
 {
   "general": {
-    "apiUrl": "https://randomuser.me/",
   },
   "development": {
     "apiUrl": "https://randomuser.me/",

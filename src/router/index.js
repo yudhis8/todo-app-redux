@@ -5,7 +5,7 @@ import {
 import Home from './../screens/main/home'
 
 export function registerScreens(store: {}, Provider: {}){
-    console.log(store, Provider)
+    // console.log(store, Provider)
     Navigation.registerComponentWithRedux('Home', () => Home, Provider, store)
 
 }

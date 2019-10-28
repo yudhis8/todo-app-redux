@@ -1,4 +1,4 @@
-import { put, call, takeLatest } from 'redux-saga/effects';
+import { put, call, takeLatest, all } from 'redux-saga/effects';
 
 import { handleError } from '../helper';
 import {
@@ -25,6 +25,8 @@ function* GetUser() {
   }
 }
 
-export default [
-  takeLatest(FETCH_USER_REQUEST, GetUser)
-];
+export default function* authFetch() {
+  yield all([
+    takeLatest(FETCH_USER_REQUEST, GetUser),
+  ])
+}

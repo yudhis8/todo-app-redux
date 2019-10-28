@@ -2,9 +2,7 @@ import configJson from '../config';
 import helper from './helper';
 
 const generalConfig = configJson.general;
-const modeConfig = helper.isDev
-  ? configJson.development
-  : configJson.production;
+const modeConfig = configJson.development
 export const config = Object.assign({}, generalConfig, modeConfig);
 
 // Style

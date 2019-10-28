@@ -18,6 +18,7 @@ const initialState: State = {
 export default (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case FETCH_USER_BEGIN:
+      console.log('state begin', state)
       return {
         ...state,
         loading: true,
@@ -25,6 +26,7 @@ export default (state: State = initialState, action: Action): State => {
       };
 
     case FETCH_USER_SUCCESS:
+      console.log('state success', state)
       return {
         ...state,
         loading: false,
@@ -32,10 +34,11 @@ export default (state: State = initialState, action: Action): State => {
       };
 
     case FETCH_USER_FAILURE:
+      console.log('state gagal', state)
       return {
         ...state,
         loading: false,
-        item: state.items
+        item: state
       };
 
     default:

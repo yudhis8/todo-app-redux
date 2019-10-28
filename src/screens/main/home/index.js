@@ -35,8 +35,8 @@ class HomeScreen extends Component<Props, State> {
     console.log(props)
   }
 
-  componentDidMount(){
-    const ayam = this.props.getUserRequest()
+  async componentDidMount(){
+    const ayam = await this.props.getUserRequest()
     console.log('oke', ayam)
     console.log('ocobake', this.props.auth)
     console.log('ocobake', this.props.state)
