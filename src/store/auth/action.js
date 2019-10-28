@@ -4,15 +4,11 @@
  */
 
 import {
-  POST_LOGIN_REQUEST,
-  POST_LOGOUT_REQUEST,
-  POST_LOGOUT_SUCCESS,
-  SET_IS_NEW
+  FETCH_USER_REQUEST,
 } from './constant';
 
 import type { Form, Action } from './constant';
 
-export const postLoginRequest = (form: Form): Action => ({
-  type: POST_LOGIN_REQUEST,
-  payload: { form }
+export const getUserRequest = ()=> ({
+  type: FETCH_USER_REQUEST
 });

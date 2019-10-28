@@ -1,6 +1,7 @@
 // @flow
 
-import React, { PureComponent } from 'react';
+import React from 'react';
+import  { PureComponent }  from 'react'
 import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
 import createStore from '../store';

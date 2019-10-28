@@ -2,33 +2,29 @@ import { put, call, takeLatest } from 'redux-saga/effects';
 
 import { handleError } from '../helper';
 import {
-  POST_USER_BEGIN,
-  POST_USER_FAILURE,
-  POST_USER_SUCCESS,
-  POST_USER_REQUEST,
+  FETCH_USER_BEGIN,
+  FETCH_USER_FAILURE,
+  FETCH_USER_SUCCESS,
+  FETCH_USER_REQUEST,
 } from './constant';
 
 import { getUser } from '../../api/auth';
 
-export function* postLogin({ payload }) {
+function* GetUser() {
   try {
-    yield put({ type: POST_USER_BEGIN });
-
-    const data = yield call(getUser, payload.form);
-    console.log(data);
-    // Once user authenticated
+    yield put({ type: FETCH_USER_BEGIN });
+    const result = yield call(getUser);
+    console.log(result, 'uaaaa')
+    console.log('aaa')
     yield put({
-      type: POST_USER_SUCCESS,
-      payload: {
-        isNew: data.data.data.is_new,
-        token: data.data.data.token
-      }
+      type: FETCH_USER_SUCCESS,
+      payload: result
     });
   } catch (error) {
-    yield call(handleError, error, POST_USER_FAILURE);
+    yield call(handleError, error, FETCH_USER_FAILURE);
   }
 }
 
 export default [
-  takeLatest(POST_USER_REQUEST, postLogin)
+  takeLatest(FETCH_USER_REQUEST, GetUser)
 ];

@@ -15,13 +15,14 @@ type item = {
 type Props = {
   title: string,
   value: string,
+  style: any,
   onValueChange: Function,
   data: Array<item>
 };
 
 function InputPicker(props: Props) {
   return (
-    <View style={styles.inputArea}>
+    <View style={[styles.inputArea, props.style]}>
     	<Text style={styles.textTitle}>
     	  {props.title}
     	</Text>

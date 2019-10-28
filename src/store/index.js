@@ -5,10 +5,11 @@ import thunk from 'redux-thunk';
 import { compact } from 'lodash';
 import { persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
-
+import { combineReducers } from 'redux'
+import {persistReducer} from 'redux-persist'
 import authReducer from '../store/auth/reducer';
 import saga from './saga';
-
+import AsyncStorage from '@react-native-community/async-storage'
 export default function initializeStore() {
   const sagaMiddleware = createSagaMiddleware();
 
@@ -44,7 +45,7 @@ export default function initializeStore() {
     }
   );
 
-  sagaMiddleware.run(sagas);
+  sagaMiddleware.run(saga);
 
   return store;
 }

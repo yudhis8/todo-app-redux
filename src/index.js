@@ -2,10 +2,10 @@ import {Platform, Text, UIManager} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 
 import {registerScreens} from './router/index';
-import Provider from './provider'
+import Provider from './provider/provider'
 import Stores from './store'
 registerScreens(Stores, Provider);
-console.log('asd')
+console.log('asd', Provider)
 Navigation.events().registerAppLaunchedListener(async () => {
   Navigation.setDefaultOptions({
     statusBar: {

@@ -4,10 +4,10 @@
  */
 
 //  USER
-export const POST_USER_BEGIN: string = 'auth/POST_USER_BEGIN';
-export const POST_USER_SUCCESS: string = 'auth/POST_USER_SUCCESS';
-export const POST_USER_FAILURE: string = 'auth/POST_USER_FAILURE';
-export const POST_USER_REQUEST: string = 'auth/POST_USER_REQUEST';
+export const FETCH_USER_BEGIN: string = 'auth/FETCH_USER_BEGIN';
+export const FETCH_USER_SUCCESS: string = 'auth/FETCH_USER_SUCCESS';
+export const FETCH_USER_FAILURE: string = 'auth/FETCH_USER_FAILURE';
+export const FETCH_USER_REQUEST: string = 'auth/FETCH_USER_REQUEST';
 
 
 type USERForm = {
