@@ -1,0 +1,10 @@
+{
+  "general": {
+  },
+  "development": {
+    "apiUrl": "",
+  },
+  "production": {
+    "apiUrl": ""
+  }
+}
